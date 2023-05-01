@@ -37,7 +37,7 @@
 
 
 <div class="page-wrapper doctris-theme toggled">
-@include('layouts.navbar')
+    @include('layouts.navbar')
     <!-- Start Page Content -->
     <main class="page-content bg-light">
         <div class="top-header">
@@ -172,174 +172,20 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @foreach($email as $key =>$row)
                                             <tr>
                                                 <th>
                                                     <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox1">
+                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox{{++$key}}">
                                                         <label class="form-check-label" for="checkbox1"></label>
                                                     </div>
                                                 </th>
                                                 <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>امی لوسر</td>
-                                                <td><p class="text-muted mb-0"> در یک ساعت آزاد ، زمانی که قدرت انتخاب ما از بین نرفته و هیچ چیز مانع توانایی انجام ما نمی شود. </p></td>
-                                                <td class="text-end"><small>17 اسفند 1400</small></td>
+                                                <td>{{$row->to}}</td>
+                                                <td><p class="text-muted mb-0"> {{$row->subject}}</p></td>
+                                                <td class="text-end"><small>{{jdate($row->created_at)->format('%A, %d %B %y')}}</small></td>
                                             </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox2">
-                                                        <label class="form-check-label" for="checkbox2"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>تامیکا ویتهود</td>
-                                                <td><p class="text-muted mb-0"> بنابراین انسان دانا همیشه در رعایت این اصل انتخاب گام برمی دارد. </p></td>
-                                                <td class="text-end"><small>27 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox3">
-                                                        <label class="form-check-label" for="checkbox3"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>باربارا بیانس</td>
-                                                <td><p class="text-muted mb-0"> ما با صالح تقبیح می کنیم </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox4">
-                                                        <label class="form-check-label" for="checkbox4"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>نیتا گریفین</td>
-                                                <td><p class="text-muted mb-0"> در یک ساعت آزاد ، زمانی که قدرت انتخاب ما از بین نرفته و هیچ چیز مانع توانایی انجام ما نمی شود. </p></td>
-                                                <td class="text-end"><small>17 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox5">
-                                                        <label class="form-check-label" for="checkbox5"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>مری فلایت</td>
-                                                <td><p class="text-muted mb-0"> بنابراین انسان دانا همیشه در رعایت این اصل انتخاب گام برمی دارد. </p></td>
-                                                <td class="text-end"><small>27 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox6">
-                                                        <label class="form-check-label" for="checkbox6"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>الین هانا</td>
-                                                <td><p class="text-muted mb-0"> دوری کردن از درد ضروریست </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox7">
-                                                        <label class="form-check-label" for="checkbox7"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>ابراهام ادوارد</td>
-                                                <td><p class="text-muted mb-0"> ما با صالح تقبیح می کنیم </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox8">
-                                                        <label class="form-check-label" for="checkbox8"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>الی اسمیت</td>
-                                                <td><p class="text-muted mb-0"> در یک ساعت آزاد ، زمانی که قدرت انتخاب ما از بین نرفته و هیچ چیز مانع توانایی انجام ما نمی شود. </p></td>
-                                                <td class="text-end"><small>17 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox9">
-                                                        <label class="form-check-label" for="checkbox9"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>ایلنو یسکو</td>
-                                                <td><p class="text-muted mb-0"> بنابراین انسان دانا همیشه در رعایت این اصل انتخاب گام برمی دارد. </p></td>
-                                                <td class="text-end"><small>27 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox10">
-                                                        <label class="form-check-label" for="checkbox10"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>توری تورک</td>
-                                                <td><p class="text-muted mb-0"> دوری کردن از درد ضروریست </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox11">
-                                                        <label class="form-check-label" for="checkbox11"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>تیریون الیوت</td>
-                                                <td><p class="text-muted mb-0"> ما با صالح تقبیح می کنیم </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox12">
-                                                        <label class="form-check-label" for="checkbox12"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>بتی کاکای</td>
-                                                <td><p class="text-muted mb-0"> ما با صالح تقبیح می کنیم </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox13">
-                                                        <label class="form-check-label" for="checkbox13"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>دوریس موریسون</td>
-                                                <td><p class="text-muted mb-0"> در یک ساعت آزاد ، زمانی که قدرت انتخاب ما از بین نرفته و هیچ چیز مانع توانایی انجام ما نمی شود. </p></td>
-                                                <td class="text-end"><small>17 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox14">
-                                                        <label class="form-check-label" for="checkbox14"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>چاد پاتر</td>
-                                                <td><p class="text-muted mb-0"> بنابراین انسان دانا همیشه در رعایت این اصل انتخاب گام برمی دارد. </p></td>
-                                                <td class="text-end"><small>27 اسفند 1400</small></td>
-                                            </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     </div>
