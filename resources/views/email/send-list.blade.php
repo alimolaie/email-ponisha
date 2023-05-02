@@ -182,7 +182,7 @@
                                                 </th>
                                                 <th><i class="uil uil-star text-muted"></i></th>
                                                 <td>{{$row->to}}</td>
-                                                <td><p class="text-muted mb-0"> {{$row->subject}}</p></td>
+                                                <td><a class="text-muted mb-0">{{$row->subject}}</a></td>
                                                 <td class="text-end"><small>{{jdate($row->created_at)->format('%A, %d %B %y')}}</small></td>
                                             </tr>
                                             @endforeach
@@ -190,7 +190,7 @@
                                         </table>
                                     </div>
 
-                                    <p class="text-start text-muted mb-0 py-2 mx-2">مشاهده بیشتر 14 از 53</p>
+                                    <p class="text-start text-muted mb-0 py-2 mx-2">تعداد ایمیل های ارسالی {{$count}}</p>
                                 </div><!--end teb pane-->
 
                                 <div class="tab-pane fade bg-white rounded" id="starred" role="tabpanel" aria-labelledby="starred-tab">

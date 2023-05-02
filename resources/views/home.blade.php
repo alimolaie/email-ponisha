@@ -24,7 +24,8 @@
     <!-- Icons -->
     <link href="{{asset('assets/css/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/remixicon.css')}}" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/basic.min.css" integrity="sha512-U0/VTgFxv1XpcI4ZrZNgVTV8IxOZBQDuUTRJexBY76M71M1XMV/hntGDZ1TfaAyjyGDVxh3JT5tedRSMHO8ZXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Iconscout -->
     {{--    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">--}}
     <link href="{{asset('assets/css/unicons.iconscout.com/release/v3.0.6/css/line.css')}}" rel="stylesheet">
@@ -585,11 +586,15 @@
                         <div class="col-12">
                             <textarea class="tinymce-editor" name="message">متن پیام</textarea>
                         </div>
+                        <div class="col-12">
 
+                            <div class="dropzone" style="height: 165px" id="document-dropzone"></div>                            </div>
+
+                    </div>
                         <div class="col-12 mt-4">
                             <button type="submit" class="btn btn-primary">ارسال</button>
                         </div>
-                    </div>
+
                 </form>
             </div>
         </div>
@@ -599,7 +604,22 @@
 
 <!-- javascript -->
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
-<!-- simplebar -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js" integrity="sha512-U2WE1ktpMTuRBPoCFDzomoIorbOyUv0sP8B+INA3EzNAhehbzED1rOJg6bCqPf/Tuposxb5ja/MAUnC8THSbLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- simplebar -->
+<script type="text/javascript">
+
+    Dropzone.autoDiscover = false;
+
+    $(document).ready(function () {
+        $("#my-dropzone").dropzone({
+            maxFiles: 5000,
+            url: "/ajax-file-handler/",
+            success: function (file, response) {
+                console.log(response);
+            }
+        });
+    })
+
+</script>
 <script src="{{asset('assets/js/simplebar.min.js')}}"></script>
 <!-- Icons -->
 <script src="{{asset('assets/js/feather.min.js')}}"></script>
