@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Webklex\IMAP\Facades\Client;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $oClient = Client::account('default');
+        $oClient->connect();
+        $oFolder = $oClient->getFolder('Inbox');
+       $aMessages = $oFolder->query()->all()->get();
+        return view('home',compact('aMessages'));
     }
 }

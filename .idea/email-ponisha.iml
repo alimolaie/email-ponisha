@@ -101,6 +101,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/yoeunes/toastr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/beberlei/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/morilog/jalali" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webklex/laravel-imap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webklex/php-imap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/plesk/api-php-lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

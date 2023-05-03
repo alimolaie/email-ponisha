@@ -32,6 +32,174 @@
     <!-- Css -->
     <link href="{{asset('assets/css/style-rtl.min.css')}}" rel="stylesheet" type="text/css" id="theme-opt">
 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+
+
+    <style>
+        .tooltip-inner {
+            background-color: white;
+            color: #ffaa0f;
+            border: 1px solid;
+        }
+
+        .tooltip.bs-tooltip-auto[x-placement=top] .arrow::before,
+        .tooltip.bs-tooltip-top .arrow::before {
+            border-top-color: #ffaa0f;
+        }
+
+        .tooltip.bs-tooltip-auto[x-placement=bottom] .arrow::before,
+        .tooltip.bs-tooltip-bottom .arrow::before {
+            border-bottom-color: #ffaa0f;
+        }
+
+        .tooltip.bs-tooltip-auto[x-placement=right] .arrow::before,
+        .tooltip.bs-tooltip-right .arrow::before {
+            border-right-color: #ffaa0f;
+        }
+
+        .tooltip.bs-tooltip-auto[x-placement=left] .arrow::before,
+        .tooltip.bs-tooltip-left .arrow::before {
+            border-left-color: #ffaa0f;
+        }
+
+        .ratio-box {
+            position: relative;
+            height: 0;
+            padding-top: 100%;
+        }
+
+        .ratio-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-ratio-box {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .img-loading {
+            position: absolute;
+            top: calc(50% - 1.5rem);
+            width: 100%;
+            height: 100%;
+        }
+
+        .border.dashed {
+            border-style: dashed !important;
+        }
+
+        .border.rounded {
+            border-radius: 1.25rem !important;
+        }
+
+        .image {
+            border-width: 2px !important;
+            border-color: #dee2e6 !important;
+        }
+
+        .main-tag {
+            position: absolute;
+            opacity: 0.8;
+            left: calc(25%);
+            top: calc(75%);
+        }
+
+        .progress {
+            font-size: 1rem;
+        }
+
+        .btnupld {
+            border: 1px solid #ffaa0f;
+            color: black;
+            border-radius: 6px;
+            width: 80px;
+        }
+
+        .btnupld1 {
+            border: 1px solid #ffaa0f;
+            color: #ffaa0f;
+        }
+
+        .btnupld1:hover {
+            border: 1px solid #ffaa0f;
+            background-color: #ffaa0f;
+            color: white;
+        }
+
+        .btnupld2 {
+            background-color: #ffaa0f;
+        }
+
+        .btnupld i {
+            color: black;
+        }
+
+        .btnupld:hover {
+            background-color: #ffaa0f;
+            color: white;
+        }
+
+        .btnupld:hover i {
+            color: white;
+        }
+
+        .fupld {
+            font-size: 28px;
+            margin-right: 3px;
+        }
+
+        .fupld2 {
+            font-size: 17px;
+        }
+
+        @media(max-width:576px) {
+            .btnupld {
+                width: 65px;
+            }
+            .fupld {
+                font-size: 18px;
+            }
+            .fupld2 {
+                font-size: 13px;
+            }
+        }
+
+        @media(max-width:470px) {
+            .btnupld {
+                width: 48px;
+            }
+            .fupld {
+                font-size: 12px;
+                margin-right: 1px;
+            }
+            .fupld2 {
+                font-size: 9px;
+            }
+        }
+
+        .txtupld {
+            text-align: center !important;
+        }
+
+        .popover-header {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -173,6 +341,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @foreach($aMessages as $oMessage)
                                             <tr>
                                                 <th>
                                                     <div class="form-check">
@@ -181,171 +350,14 @@
                                                     </div>
                                                 </th>
                                                 <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>امی لوسر</td>
-                                                <td><p class="text-muted mb-0"> در یک ساعت آزاد ، زمانی که قدرت انتخاب ما از بین نرفته و هیچ چیز مانع توانایی انجام ما نمی شود. </p></td>
-                                                <td class="text-end"><small>17 اسفند 1400</small></td>
+                                                <td>{{$oMessage->getFrom()[0]->mail}}</td>
+                                                <td><p class="text-muted mb-0"> {{$oMessage->getSubject()}}</p></td>
                                             </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox2">
-                                                        <label class="form-check-label" for="checkbox2"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>تامیکا ویتهود</td>
-                                                <td><p class="text-muted mb-0"> بنابراین انسان دانا همیشه در رعایت این اصل انتخاب گام برمی دارد. </p></td>
-                                                <td class="text-end"><small>27 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox3">
-                                                        <label class="form-check-label" for="checkbox3"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>باربارا بیانس</td>
-                                                <td><p class="text-muted mb-0"> ما با صالح تقبیح می کنیم </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox4">
-                                                        <label class="form-check-label" for="checkbox4"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>نیتا گریفین</td>
-                                                <td><p class="text-muted mb-0"> در یک ساعت آزاد ، زمانی که قدرت انتخاب ما از بین نرفته و هیچ چیز مانع توانایی انجام ما نمی شود. </p></td>
-                                                <td class="text-end"><small>17 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox5">
-                                                        <label class="form-check-label" for="checkbox5"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>مری فلایت</td>
-                                                <td><p class="text-muted mb-0"> بنابراین انسان دانا همیشه در رعایت این اصل انتخاب گام برمی دارد. </p></td>
-                                                <td class="text-end"><small>27 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox6">
-                                                        <label class="form-check-label" for="checkbox6"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>الین هانا</td>
-                                                <td><p class="text-muted mb-0"> دوری کردن از درد ضروریست </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox7">
-                                                        <label class="form-check-label" for="checkbox7"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>ابراهام ادوارد</td>
-                                                <td><p class="text-muted mb-0"> ما با صالح تقبیح می کنیم </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox8">
-                                                        <label class="form-check-label" for="checkbox8"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>الی اسمیت</td>
-                                                <td><p class="text-muted mb-0"> در یک ساعت آزاد ، زمانی که قدرت انتخاب ما از بین نرفته و هیچ چیز مانع توانایی انجام ما نمی شود. </p></td>
-                                                <td class="text-end"><small>17 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox9">
-                                                        <label class="form-check-label" for="checkbox9"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>ایلنو یسکو</td>
-                                                <td><p class="text-muted mb-0"> بنابراین انسان دانا همیشه در رعایت این اصل انتخاب گام برمی دارد. </p></td>
-                                                <td class="text-end"><small>27 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox10">
-                                                        <label class="form-check-label" for="checkbox10"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>توری تورک</td>
-                                                <td><p class="text-muted mb-0"> دوری کردن از درد ضروریست </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox11">
-                                                        <label class="form-check-label" for="checkbox11"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>تیریون الیوت</td>
-                                                <td><p class="text-muted mb-0"> ما با صالح تقبیح می کنیم </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox12">
-                                                        <label class="form-check-label" for="checkbox12"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>بتی کاکای</td>
-                                                <td><p class="text-muted mb-0"> ما با صالح تقبیح می کنیم </p></td>
-                                                <td class="text-end"><small>21 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox13">
-                                                        <label class="form-check-label" for="checkbox13"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>دوریس موریسون</td>
-                                                <td><p class="text-muted mb-0"> در یک ساعت آزاد ، زمانی که قدرت انتخاب ما از بین نرفته و هیچ چیز مانع توانایی انجام ما نمی شود. </p></td>
-                                                <td class="text-end"><small>17 اسفند 1400</small></td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input check" type="checkbox" value="" id="checkbox14">
-                                                        <label class="form-check-label" for="checkbox14"></label>
-                                                    </div>
-                                                </th>
-                                                <th><i class="uil uil-star text-muted"></i></th>
-                                                <td>چاد پاتر</td>
-                                                <td><p class="text-muted mb-0"> بنابراین انسان دانا همیشه در رعایت این اصل انتخاب گام برمی دارد. </p></td>
-                                                <td class="text-end"><small>27 اسفند 1400</small></td>
-                                            </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
 
-                                    <p class="text-start text-muted mb-0 py-2 mx-2">مشاهده بیشتر 14 از 53</p>
                                 </div><!--end teb pane-->
 
                                 <div class="tab-pane fade bg-white rounded" id="starred" role="tabpanel" aria-labelledby="starred-tab">
@@ -559,52 +571,70 @@
 <!-- Offcanvas End -->
 
 <!-- Compose Mail Start -->
-<div class="modal fade" id="compose-mail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header border-bottom p-3">
-                <h5 class="modal-title" id="exampleModalLabel">ارسال ایمیل</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-3 pt-4">
-                <form action="{{route('send.mail')}}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="به" name="to">
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="موضوع" name="subject">
-                            </div>
-                        </div>
-
-
-                        <div class="col-12">
-                            <textarea class="tinymce-editor" name="message">متن پیام</textarea>
-                        </div>
-                        <div class="col-12">
-
-                            <div class="dropzone" style="height: 165px" id="document-dropzone"></div>                            </div>
-
-                    </div>
-                        <div class="col-12 mt-4">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
-                        </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+@include('email.compose')
 <!-- Compose Mail End -->
 
 <!-- javascript -->
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js" integrity="sha512-U2WE1ktpMTuRBPoCFDzomoIorbOyUv0sP8B+INA3EzNAhehbzED1rOJg6bCqPf/Tuposxb5ja/MAUnC8THSbLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- simplebar -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        var auctionImages = null;
+        var imagesloader = $('[data-type=imagesloader]').imagesloader({
+            maxFiles: 4,
+            minSelect: 1,
+            imagesToLoad: auctionImages
+        });
+        $frm = $('#frm');
+        $frm.submit(function(e) {
+
+            var $form = $(this);
+
+            var files = imagesloader.data('format.imagesloader').AttachmentArray;
+
+            var il = imagesloader.data('format.imagesloader');
+
+            if (il.CheckValidity())
+                alert('Upload ' + files.length + ' files');
+
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+    });
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<script>
+    try {
+        fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", {
+            method: 'HEAD',
+            mode: 'no-cors'
+        })).then(function(response) {
+            return true;
+        }).catch(function(e) {
+            var carbonScript = document.createElement("script");
+            carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+            carbonScript.id = "_carbonads_js";
+            document.getElementById("carbon-block").appendChild(carbonScript);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+</script>
 <script type="text/javascript">
 
     Dropzone.autoDiscover = false;
@@ -612,7 +642,7 @@
     $(document).ready(function () {
         $("#my-dropzone").dropzone({
             maxFiles: 5000,
-            url: "/ajax-file-handler/",
+            url: "/dropzone-upload/",
             success: function (file, response) {
                 console.log(response);
             }
@@ -621,6 +651,7 @@
 
 </script>
 <script src="{{asset('assets/js/simplebar.min.js')}}"></script>
+<script src="{{asset('dropzone/jquery.imagesloader-1.0.1.js')}}"></script>
 <!-- Icons -->
 <script src="{{asset('assets/js/feather.min.js')}}"></script>
 <!-- CK editor -->

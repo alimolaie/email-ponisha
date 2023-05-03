@@ -13,6 +13,9 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "morilog/jalali": "3.*",
+        "plesk/api-php-lib": "^2.0",
+        "spatie/laravel-permission": "^3.18",
+        "webklex/laravel-imap": "^4.1",
         "yoeunes/toastr": "^2.3"
     },
     "require-dev": {

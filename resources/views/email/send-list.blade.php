@@ -404,43 +404,7 @@
 <!-- Offcanvas End -->
 
 <!-- Compose Mail Start -->
-<div class="modal fade" id="compose-mail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header border-bottom p-3">
-                <h5 class="modal-title" id="exampleModalLabel">ارسال ایمیل</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-3 pt-4">
-                <form action="{{route('send.mail')}}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="به" name="to">
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="موضوع" name="subject">
-                            </div>
-                        </div>
-
-
-                        <div class="col-12">
-                            <textarea class="tinymce-editor" name="message">متن پیام</textarea>
-                        </div>
-
-                        <div class="col-12 mt-4">
-                            <button type="submit" class="btn btn-primary">ارسال</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+@include('email.compose')
 <!-- Compose Mail End -->
 
 <!-- javascript -->

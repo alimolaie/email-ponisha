@@ -53,7 +53,7 @@
                 <div class="card login-page bg-white shadow mt-4 rounded border-0">
                     <div class="card-body">
                         <h4 class="text-center">ورود</h4>
-                        <form action="{{ route('login') }}" class="login-form mt-4" method="post">
+                        <form action="{{ route('user.login') }}" class="login-form mt-4" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">
@@ -88,7 +88,9 @@
                                         <button class="btn btn-primary" type="submit">ورود</button>
                                     </div>
                                 </div>
-
+                                <div class="col-12 text-center">
+                                    <p class="mb-0 mt-3"><small class="text-dark ms-2">اکانت ندارید؟</small> <a href="{{url('register')}}" class="text-dark fw-bold">ثبت‌نام</a></p>
+                                </div>
                             </div>
                         </form>
                     </div>

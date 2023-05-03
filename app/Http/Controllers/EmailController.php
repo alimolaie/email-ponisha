@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendEmail;
+use Webklex\IMAP\Facades\Client;
 class EmailController extends Controller
 {
     public function sendMail(Request $request)
@@ -59,4 +60,6 @@ class EmailController extends Controller
         return view('email.send-details',compact('email'));
 
     }
+
+
 }
