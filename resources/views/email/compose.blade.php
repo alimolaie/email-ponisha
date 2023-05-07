@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-3 pt-4">
-                <form action="{{route('send.mail')}}" method="post" enctype="multipart/form-data">
+                <div action="{{route('send.mail')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-12">
@@ -88,6 +88,11 @@
                             </div> --}}
                         </div>
                         <div class="col-12 mt-4">
+                            <div action="{{url('image/upload/store')}}" enctype="multipart/form-data" class="dropzone" id="dropzone">
+
+                            </div>
+                        </div>
+                        <div class="col-12 mt-4">
                             <button type="submit" class="btn btn-primary">ارسال</button>
                         </div>
 
@@ -96,3 +101,37 @@
         </div>
     </div>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+        <style>
+            .dropzone {
+                min-height: 150px;
+                border: 1px solid rgba(0, 0, 0, 0.26);
+                background: white;
+                padding: 20px 20px;
+                border-radius:3px
+            }
+        </style>
+
+<script type="text/javascript">
+    Dropzone.options.dropzone = {
+        maxFilesize: 12,
+        renameFile: function(file) {
+            var dt = new Date();
+            var time = dt.getTime();
+            return time + file.name;
+        },
+        acceptedFiles: ".jpeg,.jpg,.png,.gif",
+        addRemoveLinks: true,
+        timeout: 50000,
+
+        success: function(file, response) {
+            console.log(response);
+        },
+        error: function(file, response) {
+            return false;
+        }
+    };
+</script>

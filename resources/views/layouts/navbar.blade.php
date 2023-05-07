@@ -8,19 +8,7 @@
         </div>
 
         <ul class="sidebar-menu pt-3">
-            <li><a href="index.html"><i class="uil uil-dashboard ms-2 d-inline-block"></i>داشبرد</a></li>
-
-            <li class="sidebar-dropdown">
-                <a href="javascript:void(0)"><i class="uil uil-user ms-2 d-inline-block"></i>پزشکان</a>
-                <div class="sidebar-submenu">
-                    <ul>
-                        <li><a href="doctors.html">پزشکان</a></li>
-                        <li><a href="add-doctor.html">افزودن پزشک</a></li>
-                        <li><a href="dr-profile.html">پروفایل</a></li>
-                    </ul>
-                </div>
-            </li>
-
+          
             <li><a href="{{route('logout.user')}}" target="_blank"><i class="uil uil-window ms-2 d-inline-block"></i>خروج</a></li>
         </ul>
         <!-- sidebar-menu  -->
